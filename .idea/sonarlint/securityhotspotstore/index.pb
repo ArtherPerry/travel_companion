@@ -16,3 +16,7 @@ index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
 market.html,e/1/e15ed14e4e00578f528d6eefa2b300dd5e849872
 =
 business.html,a/9/a9f81b1985c3d58a977fbf7e46e3993e4df83b1c
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0

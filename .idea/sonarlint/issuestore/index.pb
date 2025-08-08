@@ -16,3 +16,7 @@ index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
 references.html,b/f/bff186fe1e5e41b564c9a873b01a42eca4404310
 9
 	team.html,8/a/8ab28fcffa78e2ae204e5bc8a2e2c47db25eaabf
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
