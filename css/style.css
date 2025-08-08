@@ -390,29 +390,73 @@ footer {
   transition: all 0.3s;
 }
 
-/* Responsive Nav */
 @media (max-width: 768px) {
   .navbar .container {
-    flex-wrap: wrap;
+    position: relative;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    height: var(--nav-height);
+    padding: 0 0.7em;
   }
+
+  .logo {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    z-index: 301;
+    position: relative;
+  }
+
   .nav-toggle {
     display: block;
     position: absolute;
     right: 16px;
-    top: 14px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 34px;
     height: 34px;
-    z-index: 300;
-    opacity: 0; /* hide actual checkbox */
+    z-index: 302;
+    opacity: 0;
   }
+
   .nav-toggle-label {
     display: flex;
     position: absolute;
     right: 16px;
-    top: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    z-index: 303;
+    cursor: pointer;
   }
+
+  .nav-toggle-label span {
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    border-radius: 2px;
+    background: var(--accent-blue);
+    transition: all 0.3s;
+    display: block;
+  }
+
+  /* Hamburger to X (centered) */
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
   .nav-links {
     flex-direction: column;
     width: 100%;
@@ -444,23 +488,10 @@ footer {
     border-bottom: 1px solid #f2f2f2;
   }
   .nav-links a:last-child { border-bottom: none; }
-  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
-  }
-  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -6px);
-  }
   .nav-toggle:checked ~ .nav-links {
     opacity: 1;
     pointer-events: auto;
     max-height: 480px;
-  }
-  /* Hide nav-links by default on mobile */
-  .nav-links {
-    display: flex;
   }
 }
 
