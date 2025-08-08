@@ -61,6 +61,7 @@ body {
 .cta-btn {
   display: inline-block;
   margin-top: 1.1em;
+  margin-bottom: 2em; /* Added for space below the button */
   background: var(--accent-blue);
   color: #fff;
   padding: 0.7em 2.1em;
