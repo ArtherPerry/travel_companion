@@ -362,3 +362,123 @@ footer {
     word-break: break-word;
   }
 }
+/* Hamburger base - hidden on desktop */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+/* Hamburger icon style */
+.nav-toggle-label {
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  z-index: 200;
+}
+.nav-toggle-label span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  background: var(--accent-blue);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    width: 34px;
+    height: 34px;
+    z-index: 300;
+    opacity: 0; /* hide actual checkbox */
+  }
+  .nav-toggle-label {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.35s, max-height 0.35s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    z-index: 150;
+  }
+  .nav-links li {
+    margin: 0;
+    width: 100%;
+  }
+  .nav-links a {
+    padding: 1em 1.4em;
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    color: #223;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .nav-links a:last-child { border-bottom: none; }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+  .nav-toggle:checked ~ .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 480px;
+  }
+  /* Hide nav-links by default on mobile */
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* Ensure nav is always visible on desktop */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    max-height: none !important;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none !important;
+  }
+}
